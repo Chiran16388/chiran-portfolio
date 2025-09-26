@@ -115,7 +115,7 @@
 
         <section id="cover" class="card" style="margin-top:16px">
           <h2>Cover Letter</h2>
-          <pre class="cover">Date: [Insert Date]
+          <pre class="cover">Date: <span data-today></span>
 
 Hiring Manager
 Cape Herb and Spice
@@ -133,7 +133,7 @@ Thank you for considering my application. I look forward to the opportunity to d
 
 Sincerely,
 Chiran Kavinda
-[Email] | [Phone]
+Email: hs25510289@my.sliit.lk
 </pre>
         </section>
 
@@ -150,10 +150,9 @@ Chiran Kavinda
       </div>
 
       <aside>
-        <section class="card">
+        <section id="contact" class="card">
           <h2>Contact</h2>
-          <p><strong>Email:</strong> [your.email@example.com]<br>
-          <strong>Phone:</strong> [+94 XXXXXXXXX]</p>
+          <p><strong>Email:</strong> <a href="mailto:hs25510289@my.sliit.lk">hs25510289@my.sliit.lk</a></p>
         </section>
 
         <section class="card" style="margin-top:16px">
@@ -176,8 +175,17 @@ Chiran Kavinda
 
   <footer>
     <div class="container">
-      <small>Made by Chiran Kavinda — E‑Portfolio for SC1172</small>
+      <small>Made by Chiran Kavinda — E‑Portfolio for SC1172 · © <span data-year></span></small>
     </div>
   </footer>
+
+  <script>
+  (function(){
+    const now = new Date();
+    const fmt = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.querySelectorAll('[data-today]').forEach(el => el.textContent = now.toLocaleDateString(undefined, fmt));
+    document.querySelectorAll('[data-year]').forEach(el => el.textContent = now.getFullYear());
+  })();
+  </script>
 </body>
 </html>
